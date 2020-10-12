@@ -5,8 +5,8 @@
   "description": "![Actions Status](https://github.com/sergey028/frontend-project-lvl1/workflows/hexlet-check/badge.svg)",
   "main": "index.js",
   "bin": {
-  "brain-games": "bin/brain-games.js"
-  }, 
+    "brain-games": "bin/brain-games.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
