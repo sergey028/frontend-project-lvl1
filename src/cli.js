@@ -1,5 +1,7 @@
 import promptly from 'promptly';
 
-export default async () => {
-  const name = await promptly.prompt('Your answer: ');
-};
+(async () => {
+const name = await promptly.prompt('May I have your name? ');
+  console.log(`${'Hello'}, ${name}!`);
+})();
+export default promptly;
