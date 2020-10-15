@@ -1,18 +1,7 @@
 #!/usr/bin/env node
 import greeting from '../src/cli.js';
 
-function welcome () {
-    return 'Welcome to the Brain Games!';
-}
-welcome();
+console.log('Welcome to the Brain Games!');
 
 greeting();
 
-// Если я правильно понимаю, файл brain-games.js должен выполняться построчно, 
-// сначала выводить на печать приветствие(Welcome to the Brain Games!), 
-// затем импортировать константу greeting,
-//  которая использует функцию question и опять выводить на экран уже приветствие по имени.
-
-// Интерпретатор сначала импортирует содержимое модулей. 
-// В процессе импорта происходит чтение содержимого. 
-// И если будет найдён исполняемый код, то он будет сразу выполнен.
