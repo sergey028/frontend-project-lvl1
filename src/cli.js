@@ -1,24 +1,24 @@
 import promptly from 'promptly';
 
-export default async function greeting() {
+export async function greeting() {
   const name = await promptly.prompt('May I have your name? ');
   console.log(`${'Hello'}, ${name}!`);
-}
+};
 
 function getRandom(min, max) {
-    let rand = min + Math.random() * (max + 1 - min);
-    return Math.round(rand);
-  };
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.round(rand);
+};
+
+
+const isEvenNumber = (num) => ((num % 2 === 0));
   
-  
-  const isEvenNumber = (num) => ((num % 2 === 0));
-  
-  
-  
-  (async function brainEven() {
+  export async function brainEven() {
+    
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
-   
-   
+
+ 
+    
     for (let i = 0; i < 3; i++) {
       const randomNumber = getRandom(1, 1000);
   
@@ -46,4 +46,4 @@ function getRandom(min, max) {
     
     console.log(`${'Congratulations'}, ${name}!`);
    
-  })();
+  };
