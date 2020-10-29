@@ -1,7 +1,9 @@
 import promptly from 'promptly';
 
+async const userName = await promptly.prompt('Welcome to the Brain Games! \nMay I have your name? ');
+
 export async function greeting() {
-  const name = await promptly.prompt('May I have your name? ');
+  const name = userName;
   console.log(`${'Hello'}, ${name}!`);
 };
 
@@ -36,7 +38,8 @@ const isEvenNumber = (num) => ((num % 2 === 0));
   
       if (answer !== correctAnswer) {
         console.log(`${answer} ${'is wrong answer ;(.'} ${'Correct answer was'} ${correctAnswer}`);
-        console.log(`${"Let's try again"}, ${name}!`);
+        console.log(`${"Let's try again"}, ${userName}!`);
+        
         return;
       } else {
         console.log('Correct!');
@@ -44,6 +47,6 @@ const isEvenNumber = (num) => ((num % 2 === 0));
       
     }
     
-    console.log(`${'Congratulations'}, ${name}!`);
+    console.log(`${'Congratulations'}, ${userName}!`);
    
   };
