@@ -5,4 +5,4 @@
 
 Brain Even Game Tutorial:
 
-[![asciicast](https://asciinema.org/a/jykrNTdqJFeFjQCcZNxAeLZZ4.svg)](https://asciinema.org/a/jykrNTdqJFeFjQCcZNxAeLZZ4)
+[![asciicast](https://asciinema.org/a/SzXJ1DCDmPwUvwxJlV8X1cskq.svg)](https://asciinema.org/a/SzXJ1DCDmPwUvwxJlV8X1cskq)
