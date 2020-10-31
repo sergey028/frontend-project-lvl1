@@ -4,4 +4,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/sergey028/frontend-project-lvl1)
 
 Brain Even Game Tutorial:
-https://asciinema.org/a/jykrNTdqJFeFjQCcZNxAeLZZ4
+[![asciicast](https://asciinema.org/a/jykrNTdqJFeFjQCcZNxAeLZZ4.svg)](https://asciinema.org/a/jykrNTdqJFeFjQCcZNxAeLZZ4)
