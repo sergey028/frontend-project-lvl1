@@ -38,56 +38,42 @@ export async function brainEven(name) {
   console.log(`${'Congratulations'}, ${name}!`);
 }
 
-let operations = ['+', '-', '*'];
+const operations = ['+', '-', '*'];
 
-async function brainCalc(name) {
-
+export async function brainCalc(name) {
   console.log('What is the result of the expression?');
 
   for (let round = 0; round < numberOfRounds; round += 1) {
-
     const num1 = getRandom(1, 100);
 
     const num2 = getRandom(1, 100);
 
     const operation = operations[getRandom(0, 2)];
 
-    console.log(`'Question:', ${num1} ${operation} ${num2}`);
-
-     const answer = await promptly.prompt('Your answer:');
+    let correctAnswer;
 
     switch (operation) {
       case '+':
         console.log(`Question: ${num1} + ${num2}`);
-        const correctAnswer = num1 + num2;
+        correctAnswer = num1 + num2;
         break;
       case '-':
         console.log(`Question: ${num1} - ${num2}`);
-        const correctAnswer = num1 - num2;
+        correctAnswer = num1 - num2;
         break;
       case '*':
         console.log(`Question: ${num1} * ${num2}`);
-        const correctAnswer = num1 * num2;
+        correctAnswer = num1 * num2;
         break;
     }
-
-   
-    if (answer !== correctAnswer) {
-      console.log(`'${answer}' ${'is wrong answer ;(.'} ${'Correct aswer was'} '${correctAnswer}'`);
+    const answer = await promptly.prompt('Your answer:');
+    const number = Number(answer);
+    if (number !== correctAnswer) {
+      console.log(`'${number}' ${'is wrong answer ;(.'} ${'Correct aswer was'} '${correctAnswer}'`);
       console.log(`${"Let's try again"}, ${name}!`);
       return;
     }
-    console.log('Correct!')
+    console.log('Correct!');
   }
   console.log(`${'Congratulations'}, ${name}!`);
 }
-
-
-// убрать параметры из brainCalc и определить эти переменные внутри - ок
-// operation - случайный элемент из массива operations
-// спрашивать ответ у пользователя после того, как показали вопрос
-
-// посчитать и запомнить правильный ответ
-// сравнить правильный ответ с ответом пользователя
-
-// default нужен только в тех, когда не сработал ни один case
