@@ -77,3 +77,41 @@ export async function brainCalc(name) {
   }
   console.log(`${'Congratulations'}, ${name}!`);
 }
+
+export async function brainGcd(name) {
+  console.log('Find the greatest common divisor of given numbers.');
+
+  for (let round = 0; round < numberOfRounds; round += 1) {
+    const num1 = getRandom(1, 100);
+
+    const num2 = getRandom(1, 100);
+
+    const operation = operations[getRandom(0, 2)];
+
+    let correctAnswer;
+
+    switch (operation) {
+      case '+':
+        console.log(`Question: ${num1} + ${num2}`);
+        correctAnswer = num1 + num2;
+        break;
+      case '-':
+        console.log(`Question: ${num1} - ${num2}`);
+        correctAnswer = num1 - num2;
+        break;
+      case '*':
+        console.log(`Question: ${num1} * ${num2}`);
+        correctAnswer = num1 * num2;
+        break;
+    }
+    const answer = await promptly.prompt('Your answer:');
+    const number = Number(answer);
+    if (number !== correctAnswer) {
+      console.log(`'${number}' ${'is wrong answer ;(.'} ${'Correct aswer was'} '${correctAnswer}'`);
+      console.log(`${"Let's try again"}, ${name}!`);
+      return;
+    }
+    console.log('Correct!');
+  }
+  console.log(`${'Congratulations'}, ${name}!`);
+}
