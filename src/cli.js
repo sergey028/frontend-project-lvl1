@@ -25,9 +25,9 @@ export async function brainEven(name) {
     const isEven = isEvenNumber(randomNumber);
 
     const correctAnswer = isEven ? 'yes' : 'no';
-    const answer = await promptly.prompt('Your answer:');
-    if (answer !== correctAnswer) {
-      console.log(`'${answer}' ${'is wrong answer ;(.'} ${'Correct answer was'} '${correctAnswer}'`);
+    const userAnswer = await promptly.prompt('Your answer:');
+    if (userAnswer !== correctAnswer) {
+      console.log(`'${userAnswer}' ${'is wrong answer ;(.'} ${'Correct answer was'} '${correctAnswer}'`);
       console.log(`${"Let's try again"}, ${name}!`);
 
       return;
@@ -66,10 +66,9 @@ export async function brainCalc(name) {
         correctAnswer = num1 * num2;
         break;
     }
-    const answer = await promptly.prompt('Your answer:');
-    const number = Number(answer);
-    if (number !== correctAnswer) {
-      console.log(`'${number}' ${'is wrong answer ;(.'} ${'Correct aswer was'} '${correctAnswer}'`);
+    const userAnswer = await promptly.prompt('Your answer:');
+    if (userAnswer !== String(correctAnswer)) {
+      console.log(`'${userAnswer}' ${'is wrong answer ;(.'} ${'Correct aswer was'} '${correctAnswer}'`);
       console.log(`${"Let's try again"}, ${name}!`);
       return;
     }
@@ -86,28 +85,21 @@ export async function brainGcd(name) {
 
     const num2 = getRandom(1, 100);
 
-    const operation = operations[getRandom(0, 2)];
+    const gcd = (number1, number2) => {
+      if (number2 === 0) {
+        return number1;
+      }
+      return gcd(number2, number1 % number2);
+    };
+    
+    console.log(`${num1} ${num2}`);
 
-    let correctAnswer;
+    const correctAnswer = gcd(num1, num2);
 
-    switch (operation) {
-      case '+':
-        console.log(`Question: ${num1} + ${num2}`);
-        correctAnswer = num1 + num2;
-        break;
-      case '-':
-        console.log(`Question: ${num1} - ${num2}`);
-        correctAnswer = num1 - num2;
-        break;
-      case '*':
-        console.log(`Question: ${num1} * ${num2}`);
-        correctAnswer = num1 * num2;
-        break;
-    }
-    const answer = await promptly.prompt('Your answer:');
-    const number = Number(answer);
-    if (number !== correctAnswer) {
-      console.log(`'${number}' ${'is wrong answer ;(.'} ${'Correct aswer was'} '${correctAnswer}'`);
+    const userAnswer = await promptly.prompt('Your answer:');
+
+    if (userAnswer !== String(correctAnswer)) {
+      console.log(`'${userAnswer}' ${'is wrong answer ;(.'} ${'Correct aswer was'} '${correctAnswer}'`);
       console.log(`${"Let's try again"}, ${name}!`);
       return;
     }
