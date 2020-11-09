@@ -4,6 +4,7 @@ import { getRandom } from './utils.js';
 
 const operations = ['+', '-', '*'];
 
+
 export async function brainCalc(name) {
   console.log('What is the result of the expression?');
 
