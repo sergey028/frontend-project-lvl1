@@ -1,43 +1,35 @@
-import promptly from 'promptly';
-import { greeting } from './greeting.js';
-import { getRandom } from './utils.js';
+import getRandom from './utils.js';
+
+const rules = 'What is the result of the expression?';
 
 const operations = ['+', '-', '*'];
 
+const operation = operations[getRandom(0, operations.length - 1)];
 
-export async function brainCalc(name) {
-  console.log('What is the result of the expression?');
+function genereateRound() {
+  const num1 = getRandom(1, 100);
+  const num2 = getRandom(1, 100);
 
-  for (let round = 0; round < numberOfRounds; round += 1) {
-    const num1 = getRandom(1, 100);
+  let correctAnswer;
 
-    const num2 = getRandom(1, 100);
+  switch (operation) {
+    case '+':
 
-    const operation = operations[getRandom(0, 2)];
+      correctAnswer = num1 + num2;
+      break;
+    case '-':
 
-    let correctAnswer;
+      correctAnswer = num1 - num2;
+      break;
+    case '*':
 
-    switch (operation) {
-      case '+':
-        console.log(`Question: ${num1} + ${num2}`);
-        correctAnswer = num1 + num2;
-        break;
-      case '-':
-        console.log(`Question: ${num1} - ${num2}`);
-        correctAnswer = num1 - num2;
-        break;
-      case '*':
-        console.log(`Question: ${num1} * ${num2}`);
-        correctAnswer = num1 * num2;
-        break;
-    }
-    const userAnswer = await promptly.prompt('Your answer:');
-    if (userAnswer !== String(correctAnswer)) {
-      console.log(`'${userAnswer}' ${'is wrong answer ;(.'} ${'Correct aswer was'} '${correctAnswer}'`);
-      console.log(`${"Let's try again"}, ${name}!`);
-      return;
-    }
-    console.log('Correct!');
+      correctAnswer = num1 * num2;
+      break;
   }
-  console.log(`${'Congratulations'}, ${name}!`);
+  const question = `${num1} ${operation} ${num2}`;
+
+  return { question, correctAnswer };
+
 }
+
+export const game = { rules, genereateRound, };
