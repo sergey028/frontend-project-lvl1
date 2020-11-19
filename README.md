@@ -14,3 +14,11 @@ Brain Calc Game:
 Brain Gcd Game:
 
 [![asciicast](https://asciinema.org/a/6SPgP43cLvV1MxKdDIflnyERU.svg)](https://asciinema.org/a/6SPgP43cLvV1MxKdDIflnyERU)
+
+Brain Progression Game:
+
+[![asciicast](https://asciinema.org/a/374039.svg)](https://asciinema.org/a/374039)
+
+Brain Prime Game:
+
+[![asciicast](https://asciinema.org/a/DUmkCNILJ7LAKuAbhpbQoZ1bP.svg)](https://asciinema.org/a/DUmkCNILJ7LAKuAbhpbQoZ1bP)
