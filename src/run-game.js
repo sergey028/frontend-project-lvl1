@@ -1,33 +1,28 @@
 import promptly from 'promptly';
 import greeting from './greeting.js';
 
+const NUMBER_OF_ROUNDS = 3;
 
-const name = (await greeting());
+export default async function runGame(game) {
+  const name = await greeting();
 
-async function runGame() {
+  console.log(game.rules);
 
-    console.log(game.rules);
+  for (let i = 0; i < NUMBER_OF_ROUNDS; i += 1) {
+    const round = game.genereateRound();
+    console.log('Question:', round.question);
 
-    const numberOfRounds = 3;
+    const userAnswer = await promptly.prompt('Your answer:');
 
-    for (let i = 0; i < numberOfRounds; i += 1) {
-        const round = game.genereateRound();
+    if (userAnswer !== String(round.correctAnswer)) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${round.correctAnswer}'`);
+      console.log(`Let's try again, ${name}!`);
 
-        console.log('Question:', round.question);
-
-        const userAnswer = await promptly.prompt('Your answer:');
-
-        if (userAnswer !== String(round.correctAnswer)) {
-            console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${round.correctAnswer}'`);
-            console.log(`Let's try again, ${name}!`);
-
-            return;
-        }
-        console.log('Correct!');
+      return;
     }
 
-    console.log(`Congratulations, ${name}!`);
+    console.log('Correct!');
+  }
+
+  console.log(`Congratulations, ${name}!`);
 }
-
-
-await runGame(name);
