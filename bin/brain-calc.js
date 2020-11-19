@@ -1,8 +1,5 @@
 #!/usr/bin/env node
-import { greeting, brainCalc } from '../src/cli.js';
+import runGame from '../src/run-game.js';
+import game from '../src/games/brain-calc.js';
 
-(async () => {
-   const name = (await greeting());
-
-  await brainCalc(name);
-})();
+runGame(game);
