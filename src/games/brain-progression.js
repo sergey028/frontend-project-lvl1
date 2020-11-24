@@ -16,23 +16,21 @@ function getProgression() {
   return result;
 }
 
-function changeElement(array, index) {
+function hideElement(array, index) {
   const result = [...array];
   result[index] = '..';
 
   return result;
 }
 
-export function genereateRound() {
+function genereateRound() {
   const progression = getProgression();
   const index = getRandom(0, PROGRESSION_LENGTH - 1);
 
-  const question = changeElement(progression, index).join(' ');
+  const question = hideElement(progression, index).join(' ');
   const correctAnswer = progression[index];
 
   return { question, correctAnswer };
 }
 
-const game = { rules, genereateRound };
-
-export default game;
+export const game = { rules, genereateRound };

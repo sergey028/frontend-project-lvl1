@@ -21,6 +21,4 @@ export function genereateRound() {
   return { question, correctAnswer };
 }
 
-const game = { rules, genereateRound };
-
-export default game;
+export const game = { rules, genereateRound };

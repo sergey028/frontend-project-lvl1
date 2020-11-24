@@ -16,13 +16,11 @@ const isPrime = (number) => {
   return true;
 };
 
-export function genereateRound() {
+function genereateRound() {
   const question = getRandom(1, 100);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
 
   return { question, correctAnswer };
 }
 
-const game = { rules, genereateRound };
-
-export default game;
+export const game = { rules, genereateRound };
