@@ -1,12 +1,10 @@
 import getRandom from '../utils.js';
 
-const rules = 'What is the result of the expression?';
+const OPERATIONS = ['+', '-', '*'];
 
-const operations = ['+', '-', '*'];
+const operation = OPERATIONS[getRandom(0, OPERATIONS.length - 1)];
 
-const operation = operations[getRandom(0, operations.length - 1)];
-
-const randomOperation = (number1, operation, number2) => {
+const getOperation = (number1, number2, operation) => {
  let answer;
   switch (operation) {
     case '+':
@@ -33,7 +31,7 @@ function genereateRound() {
 
   const question = `${num1} ${operation} ${num2}`;
 
-  const correctAnswer = randomOperation(num1, operation, num2);
+  const correctAnswer = getOperation(num1, num2, operation);
 
   return { question, correctAnswer };
 }
