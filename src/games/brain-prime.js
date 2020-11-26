@@ -1,7 +1,5 @@
 import getRandom from '../utils.js';
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
 const isPrime = (number) => {
   if (number < 2) {
     return false;
@@ -23,4 +21,4 @@ function genereateRound() {
   return { question, correctAnswer };
 }
 
-export const game = { rules, genereateRound };
+export const game = { rules: 'Answer "yes" if given number is prime. Otherwise answer "no".', genereateRound };
