@@ -38,4 +38,4 @@ function genereateRound() {
   return { question, correctAnswer };
 }
 
-export const game = { rules, genereateRound };
+export const game = { rules: 'What is the result of the expression?', genereateRound, };
