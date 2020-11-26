@@ -1,7 +1,5 @@
 import getRandom from '../utils.js';
 
-const rules = 'Find the greatest common divisor of given numbers.';
-
 const getGcd = (number1, number2) => {
   if (number2 === 0) {
     return number1;
@@ -21,4 +19,4 @@ export function genereateRound() {
   return { question, correctAnswer };
 }
 
-export const game = { rules, genereateRound };
+export const game = { rules: 'Find the greatest common divisor of given numbers.', genereateRound };
