@@ -1,4 +1,5 @@
 import getRandom from '../utils.js';
+import runGame from '../run-game.js';
 
 const isEvenNumber = (num) => ((num % 2 === 0));
 
@@ -9,4 +10,6 @@ function genereateRound() {
   return { question, correctAnswer };
 }
 
-export const game = { rules: 'Answer "yes" if the number is even, otherwise answer "no".', genereateRound };
+const game = { rules: 'Answer "yes" if the number is even, otherwise answer "no".', genereateRound };
+
+export default () => runGame(game);

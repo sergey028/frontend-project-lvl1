@@ -1,8 +1,9 @@
 import getRandom from '../utils.js';
+import runGame from '../run-game.js';
 
 const PROGRESSION_LENGTH = 10;
 
-function getProgression() {
+function acceptProgression() {
   const result = [];
 
   const start = getRandom(1, 10);
@@ -23,7 +24,7 @@ function hideElement(array, index) {
 }
 
 function genereateRound() {
-  const progression = getProgression();
+  const progression = acceptProgression();
   const index = getRandom(0, PROGRESSION_LENGTH - 1);
 
   const question = hideElement(progression, index).join(' ');
@@ -32,4 +33,6 @@ function genereateRound() {
   return { question, correctAnswer };
 }
 
-export const game = { rules: 'What number is missing in the progression?', genereateRound };
+const game = { rules: 'What number is missing in the progression?', genereateRound };
+
+export default () => runGame(game);
