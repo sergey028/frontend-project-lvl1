@@ -1,12 +1,9 @@
 import getRandom from '../utils.js';
-import runGame from '../run-game.js';
 
 const OPERATIONS = ['+', '-', '*'];
 
-const operation = OPERATIONS[getRandom(0, OPERATIONS.length - 1)];
-
-const getOperation = (number1, number2, expressions) => {
-  switch (expressions) {
+const getOperation = (number1, number2, operation) => {
+  switch (operation) {
     case '+':
       return number1 + number2;
 
@@ -17,14 +14,14 @@ const getOperation = (number1, number2, expressions) => {
       return number1 * number2;
 
     default:
-      break;
+      return;
   }
-  return undefined;
 };
 
 function genereateRound() {
   const num1 = getRandom(1, 100);
   const num2 = getRandom(1, 100);
+  const operation = OPERATIONS[getRandom(0, OPERATIONS.length - 1)];
 
   const question = `${num1} ${operation} ${num2}`;
 
@@ -33,6 +30,6 @@ function genereateRound() {
   return { question, correctAnswer };
 }
 
-const game = { rules: 'What is the result of the expression?', genereateRound };
+export default { rules: 'What is the result of the expression?', genereateRound }
 
-export default () => runGame(game);
+

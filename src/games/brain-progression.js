@@ -1,5 +1,4 @@
 import getRandom from '../utils.js';
-import runGame from '../run-game.js';
 
 const PROGRESSION_LENGTH = 10;
 
@@ -33,6 +32,4 @@ function genereateRound() {
   return { question, correctAnswer };
 }
 
-const game = { rules: 'What number is missing in the progression?', genereateRound };
-
-export default () => runGame(game);
+export default { rules: 'What number is missing in the progression?', genereateRound }
