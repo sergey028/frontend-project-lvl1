@@ -21,4 +21,4 @@ function genereateRound() {
   return { question, correctAnswer };
 }
 
-export default { rules: 'Answer "yes" if given number is prime. Otherwise answer "no".', genereateRound }
+export default { rules: 'Answer "yes" if given number is prime. Otherwise answer "no".', genereateRound };

@@ -19,4 +19,4 @@ export function genereateRound() {
   return { question, correctAnswer };
 }
 
-export default { rules: 'Find the greatest common divisor of given numbers.', genereateRound }
+export default { rules: 'Find the greatest common divisor of given numbers.', genereateRound };

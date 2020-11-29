@@ -9,4 +9,4 @@ function genereateRound() {
   return { question, correctAnswer };
 }
 
-export default { rules: 'Answer "yes" if the number is even, otherwise answer "no".', genereateRound }
+export default { rules: 'Answer "yes" if the number is even, otherwise answer "no".', genereateRound };

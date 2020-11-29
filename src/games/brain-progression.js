@@ -32,4 +32,4 @@ function genereateRound() {
   return { question, correctAnswer };
 }
 
-export default { rules: 'What number is missing in the progression?', genereateRound }
+export default { rules: 'What number is missing in the progression?', genereateRound };
