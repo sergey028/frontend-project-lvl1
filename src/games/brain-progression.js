@@ -2,7 +2,7 @@ import getRandom from '../utils.js';
 
 const PROGRESSION_LENGTH = 10;
 
-function acceptProgression() {
+function genereateProgression() {
   const result = [];
 
   const start = getRandom(1, 10);
@@ -23,7 +23,7 @@ function hideElement(array, index) {
 }
 
 function genereateRound() {
-  const progression = acceptProgression();
+  const progression = genereateProgression();
   const index = getRandom(0, PROGRESSION_LENGTH - 1);
 
   const question = hideElement(progression, index).join(' ');
