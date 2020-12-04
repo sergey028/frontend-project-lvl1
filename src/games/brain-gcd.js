@@ -8,15 +8,15 @@ const getGcd = (number1, number2) => {
   return getGcd(number2, number1 % number2);
 };
 
-export function genereateRound() {
+export function generateRound() {
   const num1 = getRandom(1, 100);
   const num2 = getRandom(1, 100);
 
   const question = `${num1} ${num2}`;
 
-  const correctAnswer = getGcd(num1, num2);
+  const correctAnswer = String(getGcd(num1, num2));
 
   return { question, correctAnswer };
 }
 
-export default { rules: 'Find the greatest common divisor of given numbers.', genereateRound };
+export default { rule: 'Find the greatest common divisor of given numbers.', generateRound };

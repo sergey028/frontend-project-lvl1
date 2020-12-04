@@ -22,14 +22,14 @@ function hideElement(array, index) {
   return result;
 }
 
-function genereateRound() {
+function generateRound() {
   const progression = genereateProgression();
   const index = getRandom(0, PROGRESSION_LENGTH - 1);
 
   const question = hideElement(progression, index).join(' ');
-  const correctAnswer = progression[index];
+  const correctAnswer = String(progression[index]);
 
   return { question, correctAnswer };
 }
 
-export default { rules: 'What number is missing in the progression?', genereateRound };
+export default { rule: 'What number is missing in the progression?', generateRound };

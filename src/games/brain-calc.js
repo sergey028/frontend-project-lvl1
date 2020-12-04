@@ -2,7 +2,7 @@ import getRandom from '../utils.js';
 
 const OPERATIONS = ['+', '-', '*'];
 
-function genereateRound() {
+function generateRound() {
   const num1 = getRandom(1, 100);
   const num2 = getRandom(1, 100);
   const operation = OPERATIONS[getRandom(0, OPERATIONS.length - 1)];
@@ -15,9 +15,9 @@ function genereateRound() {
 
   const question = `${num1} ${operation} ${num2}`;
 
-  const correctAnswer = operationValue[operation];
+  const correctAnswer = String(operationValue[operation]);
 
   return { question, correctAnswer };
 }
 
-export default { rules: 'What is the result of the expression?', genereateRound };
+export default { rule: 'What is the result of the expression?', generateRound };

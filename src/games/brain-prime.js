@@ -14,11 +14,11 @@ const isPrime = (number) => {
   return true;
 };
 
-function genereateRound() {
+function generateRound() {
   const question = getRandom(1, 100);
-  const correctAnswer = isPrime(question) ? 'yes' : 'no';
+  const correctAnswer = String(isPrime(question) ? 'yes' : 'no');
 
   return { question, correctAnswer };
 }
 
-export default { rules: 'Answer "yes" if given number is prime. Otherwise answer "no".', genereateRound };
+export default { rule: 'Answer "yes" if given number is prime. Otherwise answer "no".', generateRound };
