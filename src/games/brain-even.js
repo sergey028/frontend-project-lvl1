@@ -4,7 +4,7 @@ const isEvenNumber = (num) => (num % 2 === 0);
 
 function generateRound() {
   const question = getRandom(1, 100);
-  const correctAnswer = String(isEvenNumber(question) ? 'yes' : 'no');
+  const correctAnswer = isEvenNumber(question) ? 'yes' : 'no';
 
   return { question, correctAnswer };
 }
